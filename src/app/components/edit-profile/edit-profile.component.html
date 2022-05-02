@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="card inner-main">
+    <div class="card-header">
+      Edit Profile
+    </div>
+    <div class="card-body">
+
+        <form class="form-signin" [formGroup]="editForm" (ngSubmit)="onSubmit()">
+          <!-- Errors -->
+          <div *ngIf="errors?.email" class="alert alert-danger mt-3">
+            {{ errors?.email }}
+          </div>
+          <div *ngIf="errors?.password" class="alert alert-danger mt-3">
+            {{ errors?.password }}
+          </div>
+          <div *ngIf="errors?.error" class="alert alert-danger mt-3">
+            {{ errors?.error }}
+          </div>
+          <!-- Edit -->
+          <div class="form-group">
+            <label>Name</label>
+            <input type="text" class="form-control" formControlName="name" [(ngModel)]="UserProfile.name">
+          </div>
+          <div class="form-group">
+            <label>Email address</label>
+            <input type="email" class="form-control" formControlName="email" [(ngModel)]="UserProfile.email">
+          </div>
+          <button type="submit" class="btn btn-block btn-primary mt-2 ">Submit</button>
+        </form>
+    </div>
+  </div>
+</div>
