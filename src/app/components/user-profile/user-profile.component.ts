@@ -12,9 +12,11 @@ export class User {
 })
 export class UserProfileComponent implements OnInit {
   UserProfile!: User;
+  message?: string;
   constructor(public authService: AuthService) {
     this.authService.profileUser().subscribe((data: any) => {
       this.UserProfile = data;
+      this.message = data.message;
     });
   }
   ngOnInit() {}

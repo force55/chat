@@ -14,6 +14,8 @@ import { AngularMaterialModule } from './angular-material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
 
+import { AlertModule } from './alert';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +32,8 @@ import { EditProfileComponent } from './components/edit-profile/edit-profile.com
     FormsModule,
     BrowserAnimationsModule,
     AngularMaterialModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    AlertModule
   ],
   providers: [
     {

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { TokenService } from './shared/token.service';
 import { AuthStateService } from './shared/auth-state.service';
+import { AlertService } from './alert';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -12,7 +13,8 @@ export class AppComponent implements OnInit {
   constructor(
     private auth: AuthStateService,
     public router: Router,
-    public token: TokenService
+    public token: TokenService,
+    protected alertService: AlertService
   ) {}
   ngOnInit() {
     this.auth.userAuthState.subscribe((val) => {
