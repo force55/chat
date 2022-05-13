@@ -1,0 +1,43 @@
+<!--<div class="container">-->
+<!--  <p>It's works</p>-->
+<!--  <div class="row">-->
+<!--    <div class="messages">-->
+<!--      <ul *ngIf="this.messages$ | async as messages">-->
+<!--        <li *ngFor="let message of messages">-->
+<!--          <strong>№{{ message.id }}:</strong> {{ message.text }}-->
+<!--        </li>-->
+<!--      </ul>-->
+<!--    </div>-->
+
+<!--    <div class="counter">-->
+<!--      <strong *ngIf="this.counter$ | async as counter">Update websocket counter: {{ counter }}</strong>-->
+<!--    </div>-->
+<!--  </div>-->
+
+<!--  <div class="row">-->
+<!--    <form [formGroup]="form" autocomplete="off" novalidate (submit)="sendText()">-->
+<!--      <div class="form-group">-->
+<!--        <div class="form-control">-->
+<!--          <textarea placeholder="Email" autocomplete="off" formControlName="text"></textarea>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      <div class="form-group">-->
+<!--        <button type="submit" [disabled]="form.invalid">Send text</button>-->
+<!--      </div>-->
+<!--    </form>-->
+
+<!--    <div class="texts">-->
+<!--      <ul *ngIf="texts$ | async as texts">-->
+<!--        <li *ngFor="let text of texts; let i = index;">-->
+<!--          {{ text }}-->
+<!--          <span class="remove" (click)="removeText(i)">x</span>-->
+<!--        </li>-->
+<!--      </ul>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+<highcharts-chart *ngIf="chartOptions"
+                  [Highcharts]="Highcharts"
+                  [options]="chartOptions"
+                  style="width: 100%; height: 400px; display: block;"
+></highcharts-chart>

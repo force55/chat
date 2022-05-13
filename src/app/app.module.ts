@@ -15,6 +15,11 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
 
 import { AlertModule } from './alert';
+import {CurrencyComponent} from "./components/currency/currency.component";
+
+import { WebsocketModule } from './websocket';
+import {environment} from "../environments/environment";
+import {HighchartsChartModule} from "highcharts-angular";
 
 @NgModule({
   declarations: [
@@ -22,7 +27,8 @@ import { AlertModule } from './alert';
     SigninComponent,
     SignupComponent,
     UserProfileComponent,
-    EditProfileComponent
+    EditProfileComponent,
+    CurrencyComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +39,11 @@ import { AlertModule } from './alert';
     BrowserAnimationsModule,
     AngularMaterialModule,
     FlexLayoutModule,
-    AlertModule
+    AlertModule,
+    HighchartsChartModule,
+    WebsocketModule.config({
+      url: environment.ws
+    })
   ],
   providers: [
     {

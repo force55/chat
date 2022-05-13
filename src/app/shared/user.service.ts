@@ -23,10 +23,10 @@ export class UserService {
   constructor(private http: HttpClient) {}
   // User registration
   userProfile(): Observable<any> {
-    return this.http.get('http://127.0.0.1:8000/api/profile/show');
+    return this.http.get('http://192.168.1.18:80/api/profile/show');
   }
   // Login
   editProfile(profile: Profile): Observable<any> {
-    return this.http.post<any>('http://127.0.0.1:8000/api/profile/edit', profile);
+    return this.http.post<any>('http://192.168.1.18:80/api/profile/edit', profile);
   }
 }
